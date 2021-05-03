@@ -1,0 +1,19 @@
+﻿@using StudentComponents.Contracts.Events
+
+<div class="addStudent">
+    <div>First Name<input type="text" id="firstName" @bind-value="FirstName" class="form-control"/></div>
+    <div>Last Name<input type="text" id="lastName" @bind-value="LastName" class="form-control"/></div>
+
+    <button @onclick="SubmitStudentForSorting" class="btn btn-sm btn-primary mt-1">Add Student</button>
+</div>
+<div class="note">Add Student Component</div>
+
+@code {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    public void SubmitStudentForSorting()
+    {
+        Bus.Publish(new StudentAdded{Id = Guid.NewGuid(), FirstName = FirstName, LastName = LastName});
+    }
+}

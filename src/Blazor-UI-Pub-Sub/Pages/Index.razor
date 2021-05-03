@@ -1,0 +1,39 @@
+﻿@page "/"
+@using StudentComponents
+@using SortingHatComponents
+@using HogwartsEnrollmentComponents
+
+
+
+<div class="row order-1 mb-2">
+  <div class="col-12">
+    <div id="box1" class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">New Hogwarts student</h5>
+        <AddStudent />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row order-3 mb-2">
+  <div class="col-12">
+    <div id="box2" class="card text-white bg-secondary border-dark w-75">      
+      <div class="card-body">
+        <h5 class="card-title">House assignments</h5>
+        <HouseAssignments />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row order-2 mb-2">
+  <div class="col-12">
+    <div id="box3" class="card border-success w-75">
+      <div class="card-body">
+        <h5 class="card-title">Current student sorted to</h5>
+        <SortStudentsToHouse />
+      </div>
+    </div>
+  </div>  
+</div>
