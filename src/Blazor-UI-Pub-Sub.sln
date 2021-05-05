@@ -15,6 +15,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingHatComponents.Contra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HogwartsEnrollmentComponents", "HogwartsEnrollmentComponents\HogwartsEnrollmentComponents.csproj", "{C21212C2-2214-45C8-BA50-88849D16CFCD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerComponent", "CustomerComponent\CustomerComponent.csproj", "{FE332BD2-5D0D-49FF-8EA7-95E37180A553}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerComponent.Contracts", "CustomerComponent.Contracts\CustomerComponent.Contracts.csproj", "{564D9626-C10A-4DA8-A8F7-561DF853DAF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainEnrollmentComponent", "DomainEnrollmentComponent\DomainEnrollmentComponent.csproj", "{E0A82C55-7E87-452D-B880-D4EBA0519F9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingCustomerComponent", "SortingCustomerComponent\SortingCustomerComponent.csproj", "{CF364A65-BC5F-4057-85A9-324CA28B579B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingCustomerComponent.Contracts", "SortingCustomerComponent.Contracts\SortingCustomerComponent.Contracts.csproj", "{7873B7BE-2CF1-4816-AF50-02CF0BE6A257}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +55,26 @@ Global
 		{C21212C2-2214-45C8-BA50-88849D16CFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C21212C2-2214-45C8-BA50-88849D16CFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C21212C2-2214-45C8-BA50-88849D16CFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE332BD2-5D0D-49FF-8EA7-95E37180A553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE332BD2-5D0D-49FF-8EA7-95E37180A553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE332BD2-5D0D-49FF-8EA7-95E37180A553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE332BD2-5D0D-49FF-8EA7-95E37180A553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564D9626-C10A-4DA8-A8F7-561DF853DAF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564D9626-C10A-4DA8-A8F7-561DF853DAF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564D9626-C10A-4DA8-A8F7-561DF853DAF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564D9626-C10A-4DA8-A8F7-561DF853DAF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A82C55-7E87-452D-B880-D4EBA0519F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A82C55-7E87-452D-B880-D4EBA0519F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A82C55-7E87-452D-B880-D4EBA0519F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A82C55-7E87-452D-B880-D4EBA0519F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF364A65-BC5F-4057-85A9-324CA28B579B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF364A65-BC5F-4057-85A9-324CA28B579B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF364A65-BC5F-4057-85A9-324CA28B579B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF364A65-BC5F-4057-85A9-324CA28B579B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7873B7BE-2CF1-4816-AF50-02CF0BE6A257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7873B7BE-2CF1-4816-AF50-02CF0BE6A257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7873B7BE-2CF1-4816-AF50-02CF0BE6A257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7873B7BE-2CF1-4816-AF50-02CF0BE6A257}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

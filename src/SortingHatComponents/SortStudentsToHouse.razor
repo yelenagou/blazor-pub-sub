@@ -60,7 +60,7 @@
 
 
         //Slow it down a bit again
-        Thread.Sleep(TimeSpan.FromSeconds(2));
+        Thread.Sleep(TimeSpan.FromSeconds(1));
         Bus.Publish(new HouseAssigned{ Id = message.Id, House = _houses[randomNumber] });
     }
 

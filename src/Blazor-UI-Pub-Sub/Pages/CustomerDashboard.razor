@@ -1,7 +1,42 @@
 ﻿@page "/customerdashboard"
-
+@using CustomerComponent
+@using SortingCustomerComponent
+@using DomainEnrollmentComponent
 
 <h1>Customer Dashboard</h1>
+
+<div class="row order-1 mb-2">
+  <div class="col-12">
+    <div id="box1" class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">New Customer</h5>
+        <AddCustomer />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row order-2 mb-2">
+  <div class="col-12">
+    <div id="box1" class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">Domain assignments</h5>
+        <DomainAssignments />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row order-2 mb-2">
+  <div class="col-12">
+    <div id="box3" class="card border-success w-75">
+      <div class="card-body">
+        <h5 class="card-title">Current customer sorted to</h5>
+        <SortCustomerToDomain />
+      </div>
+    </div>
+  </div>  
+</div>
 
 @code {
 

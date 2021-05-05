@@ -12,7 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CustomerComponent\CustomerComponent.csproj" />
+    <ProjectReference Include="..\DomainEnrollmentComponent\DomainEnrollmentComponent.csproj" />
     <ProjectReference Include="..\HogwartsEnrollmentComponents\HogwartsEnrollmentComponents.csproj" />
+    <ProjectReference Include="..\SortingCustomerComponent\SortingCustomerComponent.csproj" />
     <ProjectReference Include="..\SortingHatComponents\SortingHatComponents.csproj" />
     <ProjectReference Include="..\StudentComponents\StudentComponents.csproj" />
   </ItemGroup>

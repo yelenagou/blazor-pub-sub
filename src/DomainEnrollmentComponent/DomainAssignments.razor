@@ -1,0 +1,60 @@
+﻿@using DomainEnrollment.Models
+@using SortingCustomerComponent.Contracts.Events
+@using CustomerComponent.Contracts.Events
+
+<div class="domainAssignments table-responsive">
+    <table class="table table-sm table-striped table-bordered table-hover">
+      
+        <tr class="thead-dark">
+            <td>Customer Name</td>
+            <td>Domain</td>
+        </tr>
+       
+
+        @foreach (var entry in Customers)
+        {
+            <tr>
+                <td>@entry.Value.FirstName @entry.Value.LastName</td>
+                <td><img src="@entry.Value.Domain" width="32"/></td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="note">Displayed by DomainAssignments Component</div>
+
+@code
+{
+
+    public Dictionary<Guid, DomainAssignmentRecord> Customers { get; set; } = new Dictionary<Guid, DomainAssignmentRecord>();
+
+    protected override void OnInitialized()
+    {
+        //Subscribe Component to Specific Message
+        Bus.Subscribe<CustomerAdded>(CustomerAddedHandler);
+        Bus.Subscribe<DomainAssigned>(DomainAssignedHandler);
+    }
+
+    private void CustomerAddedHandler(MessageArgs args)
+    {
+        var message = args.GetMessage<CustomerAdded>();
+
+        var record = new DomainAssignmentRecord
+        {
+            FirstName = message.FirstName,
+            LastName = message.LastName
+        };
+
+        Customers.Add(message.Id, record);
+        this.InvokeAsync(StateHasChanged);
+    }
+
+    private void DomainAssignedHandler(MessageArgs args)
+    {
+        var message = args.GetMessage<DomainAssigned>();
+
+        Customers[message.Id].Domain = "_content/DomainEnrollmentComponent/images/" + message.Domain;
+
+        this.InvokeAsync(StateHasChanged);
+
+    }
+}

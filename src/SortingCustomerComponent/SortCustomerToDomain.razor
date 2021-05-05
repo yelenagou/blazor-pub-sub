@@ -1,0 +1,67 @@
+﻿@using System.Threading
+@using SortingCustomerComponent.Contracts.Events
+@using CustomerComponent.Contracts.Events
+
+<div class="sortCustomers">
+    <div style="display:@SortingMessageCss">
+        Sorting customer into proper domain ..........<br /><br />
+        
+    </div>
+
+    <div style="display:@DomainMessageCss">
+        <img src="_content/SortingCustomerComponent/images/@DomainImage" />
+    </div>
+</div>
+<div class="note">SortCustomersToDomain Component</div>
+
+@code
+{
+    public string SortingMessageCss { get; set; } = "none";
+    public string DomainMessageCss { get; set; } = "none";
+    public string DomainImage { get; set; }
+
+    private Dictionary<int, string> _domains = new Dictionary<int, string>
+    {
+        {1, "2gryffindor.png"},
+        {2, "2hufflepuff.png"},
+        {3, "2ravenclaw.png"},
+        {4, "2slytherin.png"}
+    };
+
+    private readonly Random _random = new Random();
+
+    protected override void OnInitialized()
+    {
+        //Subscribe Component to Specific Message
+        Bus.Subscribe<CustomerAdded>(CustomerAddedHandler);
+    }
+
+    private void CustomerAddedHandler(MessageArgs args)
+    {
+        var message = args.GetMessage<CustomerAdded>();
+
+        //CSS for toggling
+        SortingMessageCss = "block";
+        DomainMessageCss = "none";
+        this.InvokeAsync(StateHasChanged);
+
+
+        //Slow it down a bit for better visibility for the user
+        Thread.Sleep(TimeSpan.FromSeconds(1));
+
+        var randomNumber = _random.Next(1, 5);
+
+
+        //More CSS toggling and display of house image
+        SortingMessageCss = "none";
+        DomainMessageCss = "block";
+        DomainImage = _domains[randomNumber];
+        this.InvokeAsync(StateHasChanged);
+
+
+        //Slow it down a bit again
+        Thread.Sleep(TimeSpan.FromSeconds(1));
+        Bus.Publish(new DomainAssigned{ Id = message.Id, Domain = _domains[randomNumber] });
+    }
+
+}

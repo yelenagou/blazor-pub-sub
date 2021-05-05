@@ -1,0 +1,20 @@
+﻿@using CustomerComponent.Contracts.Events
+
+<div class="addCustomer">
+    <div>First Name<input type="text" id="firstName" @bind-value="FirstName" class="form-control"/></div>
+    <div>Last Name<input type="text" id="lastName" @bind-value="LastName" class="form-control"/></div>
+    @*<div>Location<input type="text" id="location" @bind-value="Location" class="form-control"/></div>*@
+
+    <button @onclick="SubmitCustomerForAssigning" class="btn btn-sm btn-primary mt-1">Add Customer</button>
+</div>
+<div class="note">Add Customer Component</div>
+
+@code {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    public void SubmitCustomerForAssigning()
+    {
+        Bus.Publish(new CustomerAdded{Id = Guid.NewGuid(), FirstName = FirstName, LastName = LastName});
+    }
+}
